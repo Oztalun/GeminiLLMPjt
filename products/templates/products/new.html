@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titlename %}
+<title>new</title>
+{% endblock titlename %}
+
+{% block content %}
+<div>
+    <h2>New Product</h2>
+    <form action="{% url 'products:create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ forms.as_p }}
+        <button type="submit">저장</button>
+    </form>
+    <a href="{% url 'products:products' %}"><button>취소</button></a>
+</div>
+
+{% endblock content %}

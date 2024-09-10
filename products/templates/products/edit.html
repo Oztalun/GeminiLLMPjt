@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titlename %}
+<title>{{ product.title }}</title>
+{% endblock titlename %}
+
+{% block content %}
+<h1>Update Product</h1>
+
+<form action="{% url 'products:update' product.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">저장</button>
+</form>
+
+
+{% endblock content %}
