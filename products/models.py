@@ -13,9 +13,9 @@ class Product(models.Model):
     image = models.ImageField(upload_to="images/", blank=True)
     price = models.IntegerField()
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="articles")
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="products")
     like_users = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, related_name="like_articles"
+        settings.AUTH_USER_MODEL, related_name="like_products"
     )
 
     def __str__(self):

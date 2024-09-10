@@ -22,5 +22,5 @@ def Get_Answer(query):
     genai.configure(api_key=API_KEY)
 
     model = genai.GenerativeModel("gemini-1.5-flash")
-    response = model.generate_content(f"{query} 상품 목록이야. 여기서 두개의 상품을 추천해줘. 대답은 추천해준 두개의 상품의 id값만 보내줘. 다음은 답장 예시야. 1 4")
+    response = model.generate_content(f"{query} 상품 목록이야. 여기서 5개의 상품을 추천해줘. 대답은 추천해준 두개의 상품의 id값만 보내줘. 다음은 답장 예시야. 1 4 9 20 32")
     return response.text
